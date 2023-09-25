@@ -12,7 +12,7 @@ const refreshRequest = {
     "nWi0Cg6ffpzpAK65WuvtyJm2qp6sBfVusMm86pPTlcTQDWa9YUxmYqNOB0bBO57q",
   grant_type: "refresh_token",
   refresh_token: `${token.refresh_token}`,
-  redirect_uri: "https://paulhighrow.github.io/wireframe/",
+  redirect_uri: "https://paulhighrow.github.io/aggregator/",
 };
 
 const crmRefresh = async (_, __, next) => {
