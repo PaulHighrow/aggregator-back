@@ -11,7 +11,7 @@ const crmRefresh = async (_, __, next) => {
       const refreshRequestBody = {
         client_id: "f01d64db-d81d-4192-9c11-c9cca1708f41",
         client_secret:
-          "ymprn9kVrWstGHoo2han8G3iHtYNLguBDkfzaCcUcbr25XiDybQDrGYsea8tnuFn",
+          "htCdCADEqXeDIgH9V43UiZ8WI1IrzI0ftZu6xruKMaOM9LqBqlqkT6jwwkNSep7f",
         grant_type: "refresh_token",
         refresh_token: currentToken[0].refresh_token,
         redirect_uri: "https://paulhighrow.github.io/aggregator/",
@@ -21,9 +21,9 @@ const crmRefresh = async (_, __, next) => {
         "oauth2/access_token",
         refreshRequestBody
       );
-      console.log(refreshResp.data);
+      const refreshData = refreshResp.data;
 
-      const newToken = await refreshToken(currentToken[0]._id, refreshResp.data);
+      const newToken = await refreshToken(currentToken[0]._id, refreshData);
       console.log(newToken);
     }
     next();
