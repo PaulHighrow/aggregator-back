@@ -22,10 +22,9 @@ const crmRefresh = async (_, __, next) => {
         refreshRequestBody
       );
 
-      console.log(refreshResp);
+      const newToken = await refreshToken(currentToken._id, refreshResp.data);
+      console.log(newToken);
     }
-    const newToken = await refreshToken(currentToken._id, refreshResp);
-    console.log(newToken);
     next();
   } catch (error) {
     console.log(error.response.data);

@@ -15,10 +15,8 @@ const authRequest = {
 const crmAuth = async (_, __, next) => {
   try {
     const currentToken = getToken();
-    console.log(currentToken);
     if (!currentToken) {
       const authResp = await axios.post("oauth2/access_token", authRequest);
-      console.log(authResp.data);
       await savePrimaryToken(authResp.data);
       next();
     }
