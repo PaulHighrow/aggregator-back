@@ -1,19 +1,31 @@
 const axios = require("axios");
-const { getToken } = require("../../services/tokensServices");
+const { getToken, refreshToken } = require("../../services/tokensServices");
 
 axios.defaults.baseURL = "https://apeducation.kommo.com/";
 
 const crmRefresh = async (_, __, next) => {
   try {
     const currentToken = await getToken();
-    console.log(currentToken);
-    if (currentToken) {
+
+    if (currentToken[0]) {
+      const refreshRequestBody = {
+        client_id: "f01d64db-d81d-4192-9c11-c9cca1708f41",
+        client_secret:
+          "ymprn9kVrWstGHoo2han8G3iHtYNLguBDkfzaCcUcbr25XiDybQDrGYsea8tnuFn",
+        grant_type: "refresh_token",
+        refresh_token: currentToken.refresh_token,
+        redirect_uri: "https://paulhighrow.github.io/aggregator/",
+      };
+
       const refreshResp = await axios.post(
-        "oauth2/access_token", currentToken
+        "oauth2/access_token",
+        refreshRequestBody
       );
+
       console.log(refreshResp);
     }
-
+    const newToken = await refreshToken(currentToken._id, refreshResp);
+    console.log(newToken);
     next();
   } catch (error) {
     console.log(error.response.data);
