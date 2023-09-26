@@ -21,7 +21,7 @@ const crmRefresh = async (_, __, next) => {
         "oauth2/access_token",
         refreshRequestBody
       );
-      console.log(refreshResp);
+      console.log(refreshResp.data);
 
       const newToken = await refreshToken(currentToken._id, refreshResp.data);
       console.log(newToken);
