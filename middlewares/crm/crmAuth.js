@@ -1,7 +1,5 @@
 const axios = require("axios");
-const fs = require('fs').promises;
-const path = require("path");
-const tokenPath = path.join(__dirname, "../../utils/crm/tokens.json")
+const { savePrimaryToken } = require("../../services/tokensServices");
 
 axios.defaults.baseURL = "https://apeducation.kommo.com/";
 
@@ -10,7 +8,7 @@ const authRequest = {
   client_secret:
     "ymprn9kVrWstGHoo2han8G3iHtYNLguBDkfzaCcUcbr25XiDybQDrGYsea8tnuFn",
   grant_type: "authorization_code",
-  code: "def50200d833cdefe16152a07dce23415397212737f8497ccc63027145c965f86504098f11e475180a9f589debc5d40819557bb0aef58df772ad91dbb31e6c96f4b20fc6542ae386b1ef3abea4676245a742fa514942626f29bfb56a5595683be8be68be2a9c7f5b11be82d59996a07221882773dc5186014b9055b23408e4688b2d58f53df9d88d58f2c985ad0f45529cdd665de0776f3aec258e3bd56f39e61602b49577cc5e4f48290b7990c3b565a7fe21d434bbc61616eae00880e49fd28448443e745dcd2b35e8779f5c8abc1fd25a1ee36cae80515c7fa36e1ef532293a36f8a908fe5cca23591d4a2d7bde80d85a44c5fd4ccc36fa2f4434779de826198871cce101f2d87797a2aa308bc609a6f93a6602c20f963f546242c23a30040ed0d5cb7e3d7783ebfa191e0b20d3e38f8d73cd119172acb8e66d3aa3377043b70627e3136c38243232b484a42127288f1a29fa7dc72222dd3339f1960d03cc3691c5df28e05c3d166103fd19db6741e94c374065f65da4d44f9c827b52b887205b80cbe87d4d8f79ff4a6c8a589b10e868f78fd7430bfc45db0da1d3b1f3c52b0977fb2dd590a477abc4226ebb5a6fc6ec7a68c5e43f557d628208a3af71eeb9c3408f4f221061c707d4a8beadb80373564d5325d2401140d037259cb4c48df347655ea95b3ace3abf96ddb7932f6ff5346eb452342df878539b",
+  code: "def5020001d04734eab70d61b88e4e8b16373b37ac9b66350e4be966eade44b32742a1b5f65769f6ed39178e981e4c8fb4242b0b90a11fd2041114bb935433c6cf59e5e27d5a6be0d17395f00f85d98dd48fbde78c6924b62313b98b5a2480b584f4b14709373d233f9891769fc0fecddd84408fd044cfb635b0926c921ec78a67f4a16b13581f3d52c84ed86170092d28be1bd7f8448ecf56692841563e240e58846b88a3ac5df3fbf7bd99003d4d17d939109b8608c5af0914e9caa288e790f557fd246d3b4a461cf6718b6e21002100c6d33df881fde9057b62361f803c4d12595de1a82fdfdd344a57bcacf5a425e3a7aea7bbd15916007897ec71ffc9967e56049214beb30441a7de02a06caba89924041dca2e5ccae087c3b877bb85b8d0db9f3a11188e5bd255bccb18925aee2daffdca175b4d0144c7cb6bf661be5206f90e827a2ffef06ed92f084acdbc6a7a3b8640a6a37ebf39bfa379f1d9e167839798d529b735f087a0e57303201940453c429d07416ac36a97ce21f4d35fa653d5f953494fefb47b674d2d16dd1b49f2c095f2cd81c70ed27ea6c2ec08ecafd6d3ceb91541a7534db3e04c970ecc973232abc18e0e7f8025ed85cf44b27ee4df676f0da64bc88d9cf64a45e6ccbb8ba8f3b1a1f34bf6d10af8ebf7b473be249b43d35ef61fb5ec2a3e95b06e1fb03d23453916e8c338fb081908",
   redirect_uri: "https://paulhighrow.github.io/aggregator/",
 };
 
@@ -18,7 +16,7 @@ const crmAuth = async (_, __, next) => {
   try {
     const authResp = await axios.post("oauth2/access_token", authRequest);
     console.log(authResp.data);
-    await fs.writeFile(tokenPath, JSON.stringify(authResp.data), "utf-8")
+    await savePrimaryToken(authResp.data);
     next();
   } catch (error) {
     console.log(error.response.data);
