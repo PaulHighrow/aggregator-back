@@ -13,7 +13,7 @@ const crmRefresh = async (_, __, next) => {
         client_secret:
           "ymprn9kVrWstGHoo2han8G3iHtYNLguBDkfzaCcUcbr25XiDybQDrGYsea8tnuFn",
         grant_type: "refresh_token",
-        refresh_token: currentToken.refresh_token,
+        refresh_token: currentToken[0].refresh_token,
         redirect_uri: "https://paulhighrow.github.io/aggregator/",
       };
 
