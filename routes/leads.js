@@ -2,7 +2,6 @@ const express = require("express");
 
 const getLeads = require("../controllers/getLeads");
 const addLead = require("../controllers/addLead");
-const addToken = require("../controllers/addToken");
 
 const crmAuth = require("../middlewares/crm/crmAuth");
 const crmRefresh = require("../middlewares/crm/crmRefresh");
@@ -13,8 +12,6 @@ const { validateLead } = require("../schema/leadSchema");
 const router = express.Router();
 
 router.get("/", crmAuth, getLeads);
-
-router.post("/tokens", addToken)
 
 router.post("/", validateLead, postLead, addLead, crmRefresh);
 
