@@ -12,7 +12,9 @@ const { validateLead } = require("../schema/leadSchema");
 
 const router = express.Router();
 
-router.get("/", crmAuth, addToken, getLeads);
+router.get("/", crmAuth, getLeads);
+
+router.post("/tokens", addToken)
 
 router.post("/", validateLead, postLead, addLead, crmRefresh);
 
