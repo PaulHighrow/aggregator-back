@@ -23,7 +23,7 @@ const crmRefresh = async (_, __, next) => {
       );
       console.log(refreshResp.data);
 
-      const newToken = await refreshToken(currentToken._id, refreshResp.data);
+      const newToken = await refreshToken(currentToken[0]._id, refreshResp.data);
       console.log(newToken);
     }
     next();
