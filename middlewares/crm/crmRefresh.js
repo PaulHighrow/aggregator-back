@@ -5,14 +5,13 @@ axios.defaults.baseURL = "https://apeducation.kommo.com/";
 
 const crmRefresh = async (_, __, next) => {
   try {
-    const currentToken = getToken();
+    const currentToken = await getToken();
     console.log(currentToken);
     if (currentToken) {
       const refreshResp = await axios.post(
         "oauth2/access_token", currentToken
       );
       console.log(refreshResp);
-      console.log(refreshResp.data);
     }
 
     next();
