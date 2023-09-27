@@ -3,7 +3,7 @@ const { getToken, refreshToken } = require("../../services/tokensServices");
 
 axios.defaults.baseURL = "https://apeducation.kommo.com/";
 
-const crmRefresh = async (_, __, next) => {
+const crmRefresh = async (_, res, next) => {
   try {
     const currentToken = await getToken();
 
@@ -22,14 +22,15 @@ const crmRefresh = async (_, __, next) => {
         refreshRequestBody
       );
 
-      const newToken = await refreshToken(currentToken[0]._id, refreshResp);
+      const newToken = await refreshToken(currentToken[0]._id, refreshResp.data);
       console.log(newToken);
+      return res.status(200).json(newToken);
     }
     next();
   } catch (error) {
-    console.log(error.response);
+    console.log(error);
+    return res.status(error).json(error);
   }
-  next();
 };
 
 module.exports = crmRefresh;

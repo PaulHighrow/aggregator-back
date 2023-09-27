@@ -12,6 +12,6 @@ const router = express.Router();
 
 router.get("/", getLeads);
 
-router.post("/", validateLead, postLead, addLead, crmRefresh);
+router.post("/", validateLead, postLead, crmRefresh);
 
 module.exports = router;
