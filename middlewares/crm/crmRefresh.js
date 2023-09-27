@@ -21,14 +21,13 @@ const crmRefresh = async (_, __, next) => {
         "oauth2/access_token",
         refreshRequestBody
       );
-      const refreshData = refreshResp.data;
 
-      const newToken = await refreshToken(currentToken[0]._id, refreshData);
+      const newToken = await refreshToken(currentToken[0]._id, refreshResp);
       console.log(newToken);
     }
     next();
   } catch (error) {
-    console.log(error.response.data);
+    console.log(error.response);
   }
   next();
 };
