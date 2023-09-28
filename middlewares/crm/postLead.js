@@ -7,15 +7,16 @@ axios.defaults.baseURL = "https://apeducation.kommo.com/";
 const postLead = async (req, res, next) => {
   const postRequest = [
     {
-      name: `Website Lead + ${req.body.name}`,
+      name: `Website Lead ${req.body.name}`,
       pipeline_id: 6542135,
       _embedded: {
+        tags: [{ name: "Лід з сайту" }],
         contacts: [
           {
             name: req.body.name,
             custom_fields_values: [
               {
-                field_id: 379564,
+                field_id: 556510,
                 field_name: "Work phone",
                 values: [
                   {

@@ -1,7 +1,6 @@
 const express = require("express");
 
 const getLeads = require("../controllers/getLeads");
-const addLead = require("../controllers/addLead");
 
 const crmRefresh = require("../middlewares/crm/crmRefresh");
 const postLead = require("../middlewares/crm/postLead");
