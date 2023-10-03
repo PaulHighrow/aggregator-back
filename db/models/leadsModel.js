@@ -1,15 +1,21 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 const leads = new Schema(
   {
     name: {
       type: String,
-      required: [true, 'Set name'],
+      required: [true, "Set name"],
     },
     phone: {
       type: String,
-      required: [true, 'Set phone number'],
+      required: [true, "Set phone number"],
     },
+    utm_content: { type: String },
+    utm_medium: { type: String },
+    utm_campaign: { type: String },
+    utm_source: { type: String },
+    utm_term: { type: String },
+    utm_referrer: { type: String },
   },
   {
     versionKey: false,
@@ -17,6 +23,6 @@ const leads = new Schema(
   }
 );
 
-const Leads = model('leads', leads);
+const Leads = model("leads", leads);
 
 module.exports = Leads;
