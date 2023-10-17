@@ -3,12 +3,12 @@ const Joi = require("joi");
 const leadSchema = Joi.object({
   name: Joi.string().min(3).max(50).required(),
   phone: Joi.string().min(10).max(20).required(),
-  utm_content: Joi.string(),
-  utm_medium: Joi.string(),
-  utm_campaign: Joi.string(),
-  utm_source: Joi.string(),
-  utm_term: Joi.string(),
-  utm_referrer: Joi.string(),
+  utm_content: Joi.string().empty(""),
+  utm_medium: Joi.string().empty(""),
+  utm_campaign: Joi.string().empty(""),
+  utm_source: Joi.string().empty(""),
+  utm_term: Joi.string().empty(""),
+  utm_referrer: Joi.string().empty(""),
 });
 
 const validateLead = ({ body }, res, next) => {
