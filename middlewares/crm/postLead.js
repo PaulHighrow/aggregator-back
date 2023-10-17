@@ -1,11 +1,11 @@
 const axios = require("axios");
+require("dotenv").config();
 const { getToken } = require("../../services/tokensServices");
 const { newLead } = require("../../services/leadsServices");
 
-axios.defaults.baseURL = "https://apeducation.kommo.com/";
+axios.defaults.baseURL = process.env.BASE_URL;
 
-const postLead = async (req, res, next) => {
-  console.log(req.body);
+const postLead = async (req, res, _) => {
   const postRequest = [
     {
       name: `Website Lead ${req.body.name}`,

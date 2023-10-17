@@ -1,7 +1,9 @@
 const axios = require("axios");
+require("dotenv").config();
+
 const { getToken, refreshToken } = require("../../services/tokensServices");
 
-axios.defaults.baseURL = "https://apeducation.kommo.com/";
+axios.defaults.baseURL = process.env.BASE_URL;
 
 const crmRefresh = async (_, res, next) => {
   try {
@@ -9,12 +11,11 @@ const crmRefresh = async (_, res, next) => {
 
     if (currentToken[0]) {
       const refreshRequestBody = {
-        client_id: "f01d64db-d81d-4192-9c11-c9cca1708f41",
-        client_secret:
-          "htCdCADEqXeDIgH9V43UiZ8WI1IrzI0ftZu6xruKMaOM9LqBqlqkT6jwwkNSep7f",
+        client_id: process.env.CL_ID,
+        client_secret: process.env.CL_SCR,
         grant_type: "refresh_token",
         refresh_token: currentToken[0].refresh_token,
-        redirect_uri: "https://paulhighrow.github.io/aggregator/",
+        redirect_uri: process.env.REDIR_URI,
       };
 
       const refreshResp = await axios.post(
