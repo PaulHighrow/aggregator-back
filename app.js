@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const router = require("./routes/main");
 const leadsRouter = require("./routes/leads");
+const translationLeadsRouter = require("./routes/tr-leads");
 const tokensRouter = require("./routes/tokens");
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 
 app.use("/", router);
 app.use("/leads", leadsRouter);
+app.use("/tr-leads", translationLeadsRouter);
 app.use("/tokens", tokensRouter);
 
 app.use((req, res) => {
