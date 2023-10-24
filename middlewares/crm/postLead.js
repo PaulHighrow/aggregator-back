@@ -67,6 +67,42 @@ const postLead = async (req, res, _) => {
             },
           ],
         },
+        {
+          field_id: 556530,
+          field_name: "referrer",
+          values: [
+            {
+              value: req.body.referrer || '',
+            },
+          ],
+        },
+        {
+          field_id: 556532,
+          field_name: "gclientid",
+          values: [
+            {
+              value: req.body.gclientid || '',
+            },
+          ],
+        },
+        {
+          field_id: 556534,
+          field_name: "gclid",
+          values: [
+            {
+              value: req.body.gclid || '',
+            },
+          ],
+        },
+        {
+          field_id: 556536,
+          field_name: "fbclid",
+          values: [
+            {
+              value: req.body.fbclid || '',
+            },
+          ],
+        },
       ],
       _embedded: {
         tags: [{ name: "Лід з сайту" }],
