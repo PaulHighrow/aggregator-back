@@ -101,6 +101,10 @@ const postTranslationLead = async (req, res, _) => {
     utm_source: req.body.utm_source,
     utm_term: req.body.utm_term,
     utm_referrer: req.body.utm_referrer,
+    referrer: req.body.referrer,
+    gclientid: req.body.gclientid,
+    gclid: req.body.gclid,
+    fbclid: req.body.fbclid,
   };
 
   try {

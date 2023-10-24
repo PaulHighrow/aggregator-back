@@ -9,6 +9,10 @@ const leadSchema = Joi.object({
   utm_source: Joi.string().empty(""),
   utm_term: Joi.string().empty(""),
   utm_referrer: Joi.string().empty(""),
+  referrer: Joi.string().empty(""),
+  gclientid: Joi.string().empty(""),
+  gclid: Joi.string().empty(""),
+  fbclid: Joi.string().empty(""),
 });
 
 const validateLead = ({ body }, res, next) => {

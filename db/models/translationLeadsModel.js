@@ -20,6 +20,10 @@ const translateLeadSchema = new Schema(
     utm_source: { type: String },
     utm_term: { type: String },
     utm_referrer: { type: String },
+    referrer: { type: String },
+    gclientid: { type: String },
+    gclid: { type: String },
+    fbclid: { type: String },
   },
   {
     versionKey: false,
