@@ -11,7 +11,7 @@ const postLead = async (req, res, _) => {
       name: `Website Lead ${req.body.name}`,
       // tried to set lead status, but due to automated lead categorizing it does not work properly
       // status_id: 55468371,
-      pipeline_id: 6542135,
+      pipeline_id: 6453287,
       custom_fields_values: [
         {
           field_id: 556518,
