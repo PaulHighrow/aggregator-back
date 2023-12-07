@@ -18,7 +18,7 @@ const translationLeadSchema = Joi.object({
 
 const validateTranslationLead = ({ body }, res, next) => {
   const { error } = translationLeadSchema.validate(body);
-  if (error) return res.status(400).json(error.details[0].message, "here");
+  if (error) return res.status(400).json(error.details[0].message);
 
   next();
 };
