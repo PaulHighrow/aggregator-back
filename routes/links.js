@@ -9,9 +9,9 @@ const auth = require("../middlewares/streams/auth");
 
 const router = express.Router();
 
-router.get("/all", auth, getLinks);
+router.get("/all", getLinks);
 
-router.get("/", auth, getOneLink);
+router.get("/", getOneLink);
 
 router.post("/", auth, validateLinks, addLinks);
 
