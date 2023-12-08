@@ -4,11 +4,14 @@ const admins = new Schema(
   {
     login: {
       type: String,
-      required: [true, "No token type"],
+      required: [true, "No login"],
     },
     password: {
       type: String,
-      required: [true, "No expiration number"],
+      required: [true, "No password"],
+    },
+    token: {
+      type: String,
     },
   },
   {

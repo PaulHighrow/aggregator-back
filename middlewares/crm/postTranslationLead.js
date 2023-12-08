@@ -18,7 +18,7 @@ const postTranslationLead = async (req, res, _) => {
           field_name: "utm_content",
           values: [
             {
-              value: req.body.utm_content || '',
+              value: req.body.utm_content || "",
             },
           ],
         },
@@ -27,7 +27,7 @@ const postTranslationLead = async (req, res, _) => {
           field_name: "utm_medium",
           values: [
             {
-              value: req.body.utm_medium || '',
+              value: req.body.utm_medium || "",
             },
           ],
         },
@@ -36,7 +36,7 @@ const postTranslationLead = async (req, res, _) => {
           field_name: "utm_campaign",
           values: [
             {
-              value: req.body.utm_campaign || '',
+              value: req.body.utm_campaign || "",
             },
           ],
         },
@@ -45,7 +45,7 @@ const postTranslationLead = async (req, res, _) => {
           field_name: "utm_source",
           values: [
             {
-              value: req.body.utm_source || '',
+              value: req.body.utm_source || "",
             },
           ],
         },
@@ -54,7 +54,7 @@ const postTranslationLead = async (req, res, _) => {
           field_name: "utm_term",
           values: [
             {
-              value: req.body.utm_term || '',
+              value: req.body.utm_term || "",
             },
           ],
         },
@@ -63,13 +63,13 @@ const postTranslationLead = async (req, res, _) => {
           field_name: "utm_referrer",
           values: [
             {
-              value: req.body.utm_referrer || '',
+              value: req.body.utm_referrer || "",
             },
           ],
         },
       ],
       _embedded: {
-        tags: [{ name: "Лід з сайту" }, {name: `Переклад ${req.body.lang}`}],
+        tags: [{ name: "Лід з сайту" }, { name: `Переклад ${req.body.lang}` }],
         contacts: [
           {
             name: req.body.name,

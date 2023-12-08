@@ -1,13 +1,20 @@
 const express = require("express");
 
-const { validateAdminUser } = require("../schema/adminsSchema");
-const addAdmin = require("../controllers/addAdmin");
-const getAdmins = require("../controllers/getAdmins");
+const { validateLinks } = require("../schema/linksSchema");
+const getLinks = require("../controllers/getLinks");
+const addLinks = require("../controllers/addLinks");
+const updateLinks = require("../controllers/updateLinks");
+const getOneLink = require("../controllers/getOneLink");
+const auth = require("../middlewares/streams/auth");
 
 const router = express.Router();
 
-router.get("/", getAdmins);
+router.get("/all", auth, getLinks);
 
-router.post("/", validateAdminUser, addAdmin );
+router.get("/", auth, getOneLink);
+
+router.post("/", auth, validateLinks, addLinks);
+
+router.patch("/", auth, validateLinks, updateLinks);
 
 module.exports = router;

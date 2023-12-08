@@ -14,5 +14,5 @@ const validateAdminUser = ({ body }, res, next) => {
 };
 
 module.exports = {
-    validateAdminUser,
+  validateAdminUser,
 };
