@@ -4,6 +4,7 @@ const leadSchema = Joi.object({
   a0: Joi.string().empty(""),
   a1: Joi.string().empty(""),
   a2: Joi.string().empty(""),
+  b1: Joi.string().empty(""),
   deutsch: Joi.string().empty(""),
   polski: Joi.string().empty(""),
 });

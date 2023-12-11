@@ -11,6 +11,9 @@ const links = new Schema(
     a2: {
       type: String,
     },
+    b1:{
+      type: String,
+    },
     deutsch: {
       type: String,
     },
