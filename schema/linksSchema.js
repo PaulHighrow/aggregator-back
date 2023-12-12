@@ -7,6 +7,9 @@ const leadSchema = Joi.object({
   b1: Joi.string().empty(""),
   deutsch: Joi.string().empty(""),
   polski: Joi.string().empty(""),
+  a1kids: Joi.string().empty(""),
+  a2kids: Joi.string().empty(""),
+  trials: Joi.string().empty(""),
 });
 
 const validateLinks = ({ body }, res, next) => {

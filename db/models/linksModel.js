@@ -11,7 +11,7 @@ const links = new Schema(
     a2: {
       type: String,
     },
-    b1:{
+    b1: {
       type: String,
     },
     deutsch: {
@@ -20,6 +20,9 @@ const links = new Schema(
     polski: {
       type: String,
     },
+    a1kids: { type: String },
+    a2kids: { type: String },
+    trials: { type: String },
   },
   {
     versionKey: false,
