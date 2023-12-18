@@ -26,6 +26,7 @@ const links = new Schema(
     trials: { type: String },
     trials_de: { type: String },
     trials_pl: { type: String },
+    trials_kids: { type: String },
   },
   {
     versionKey: false,

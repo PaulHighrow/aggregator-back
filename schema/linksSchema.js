@@ -13,6 +13,7 @@ const leadSchema = Joi.object({
   trials: Joi.string().empty(""),
   trials_de: Joi.string().empty(""),
   trials_pl: Joi.string().empty(""),
+  trials_kids: Joi.string().empty(""),
 });
 
 const validateLinks = ({ body }, res, next) => {
