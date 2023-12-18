@@ -22,6 +22,7 @@ const links = new Schema(
     },
     a1kids: { type: String },
     a2kids: { type: String },
+    b1kids: { type: String },
     trials: { type: String },
   },
   {
