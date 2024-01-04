@@ -1,7 +1,7 @@
-const { getAdmin } = require("../services/adminsServices");
+const { findAdmin } = require("../services/adminsServices");
 
 const getLinkAdmin = async (_, res) => {
-  return res.json(await getAdmin());
+  return res.json(await findAdmin());
 };
 
 module.exports = getLinkAdmin;

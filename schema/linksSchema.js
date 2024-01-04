@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-const leadSchema = Joi.object({
+const linksSchema = Joi.object({
   a0: Joi.string().empty(""),
   a1: Joi.string().empty(""),
   a2: Joi.string().empty(""),
@@ -18,7 +18,7 @@ const leadSchema = Joi.object({
 });
 
 const validateLinks = ({ body }, res, next) => {
-  const { error } = leadSchema.validate(body);
+  const { error } = linksSchema.validate(body);
 
   if (error) return res.status(400).json(error.details[0].message);
 

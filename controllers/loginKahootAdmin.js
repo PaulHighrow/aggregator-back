@@ -1,10 +1,13 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const { signInAdmin, findAdmin } = require("../services/adminsServices");
+const {
+  signInKahootAdmin,
+  findKahootAdmin,
+} = require("../services/adminsServices");
 
-const loginAdmin = async (req, res, next) => {
+const loginKahootAdmin = async (req, res, next) => {
   const { login, password } = req.body;
-  const admin = await findAdmin({ login });
+  const admin = await findKahootAdmin({ login });
   console.log(admin);
   if (!admin) {
     res.status(401).json("Login or password is wrong");
@@ -18,9 +21,9 @@ const loginAdmin = async (req, res, next) => {
   const payload = { id: admin._id };
   const token = jwt.sign(payload, process.env.SECRET, { expiresIn: "2h" });
 
-  await signInAdmin(admin._id, { token });
+  await signInKahootAdmin(admin._id, { token });
 
   res.status(200).json({ token, admin: { login } });
 };
 
-module.exports = loginAdmin;
+module.exports = loginKahootAdmin;
