@@ -6,8 +6,12 @@ const updateKahoots = async (req, res) => {
   console.log(kahoots);
   const body = {};
   for (const [key, value] of Object.entries(req.body)) {
+    console.log(value.replace);
     console.log(key);
     console.log(value);
+    if (!value.replace) {
+      console.log(body);
+    }
     if (value) {
       body[key] = value;
     }
