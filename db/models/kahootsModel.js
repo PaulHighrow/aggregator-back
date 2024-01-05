@@ -58,11 +58,11 @@ const kahoots = new Schema(
     },
     a1kids: {
       links: {
-        a0_1: String,
-        a0_2: String,
-        a0_3: String,
-        a0_4: String,
-        a0_5: String,
+        a1kids_1: String,
+        a1kids_2: String,
+        a1kids_3: String,
+        a1kids_4: String,
+        a1kids_5: String,
       },
     },
     a2kids: {
