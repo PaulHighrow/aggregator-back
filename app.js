@@ -9,6 +9,7 @@ const linksRouter = require("./routes/links");
 const kahootsRouter = require("./routes/kahoots");
 const translationLeadsRouter = require("./routes/tr-leads");
 const tokensRouter = require("./routes/tokens");
+const usersRouter = require("./routes/users");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use("/links", linksRouter);
 app.use("/kahoots", kahootsRouter);
 app.use("/tr-leads", translationLeadsRouter);
 app.use("/tokens", tokensRouter);
+app.use("/users", usersRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
