@@ -4,7 +4,6 @@ const users = new Schema(
   {
     name: {
       type: String,
-      required: [true, "No name"],
     },
     mail: {
       type: String,
