@@ -13,6 +13,9 @@ const users = new Schema(
       type: String,
       required: [true, "No password"],
     },
+    points: {
+      type: String,
+    },
     token: {
       type: String,
     },
