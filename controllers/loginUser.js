@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
 const { signInUser, findUser } = require("../services/usersServices");
 
 const loginUser = async (req, res, next) => {
@@ -10,7 +9,7 @@ const loginUser = async (req, res, next) => {
     res.status(401).json("Login or password is wrong");
   }
 
-  const validatedPassword = await bcrypt.compare(password, user.password);
+  const validatedPassword = password === user.password;
   if (!validatedPassword) {
     res.status(401).json("Login or password is wrong");
   }
