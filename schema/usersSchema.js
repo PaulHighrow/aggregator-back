@@ -4,7 +4,7 @@ const userSchema = Joi.object({
   name: Joi.string(),
   mail: Joi.string().required(),
   password: Joi.string().required(),
-  points: Joi.string(),
+  points: Joi.string().empty(""),
   token: Joi.string(),
   isBanned: Joi.bool(),
 });
