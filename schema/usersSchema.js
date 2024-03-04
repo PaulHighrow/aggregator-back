@@ -5,7 +5,8 @@ const userSchema = Joi.object({
   mail: Joi.string().required(),
   password: Joi.string().required(),
   points: Joi.string(),
-  token: Joi.string()
+  token: Joi.string(),
+  isBanned: Joi.bool(),
 });
 
 const validateUser = ({ body }, res, next) => {

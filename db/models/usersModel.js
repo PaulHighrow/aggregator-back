@@ -19,6 +19,9 @@ const users = new Schema(
     token: {
       type: String,
     },
+    isBanned: {
+      type: Boolean,
+    },
   },
   {
     versionKey: false,

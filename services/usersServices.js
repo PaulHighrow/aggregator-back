@@ -11,10 +11,14 @@ const deleteUser = async (id) => await Users.findByIdAndDelete(id);
 const signInUser = async (id, body) =>
   await Users.findByIdAndUpdate(id, body, { new: true });
 
+const updateUser = async (id, body) =>
+  await Users.findByIdAndUpdate(id, body, { new: true });
+
 module.exports = {
   allUsers,
   findUser,
   newUser,
   deleteUser,
   signInUser,
+  updateUser,
 };
