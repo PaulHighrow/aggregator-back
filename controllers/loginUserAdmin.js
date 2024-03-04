@@ -19,7 +19,7 @@ const loginUserAdmin = async (req, res, next) => {
   }
 
   const payload = { id: admin._id };
-  const token = jwt.sign(payload, process.env.SECRET, { expiresIn: "2h" });
+  const token = jwt.sign(payload, process.env.SECRET, { expiresIn: "12h" });
 
   await signInUserAdmin(admin._id, { token });
 
