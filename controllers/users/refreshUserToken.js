@@ -1,0 +1,28 @@
+const jwt = require("jsonwebtoken");
+const { signInUser, findUser } = require("../../services/usersServices");
+
+const refreshUserToken = async (req, res, next) => {
+  const { mail } = req.body;
+
+  const user = await findUser({ mail });
+  console.log(user);
+  if (!user) {
+    next();
+  }
+  console.log(
+    user.updatedAt.toDateString()
+  );
+  const isTokenOK = jwt.verify(user.token, process.env.SECRET);
+  if (!isTokenOK) {
+    next();
+  }
+
+  const payload = { id: user._id };
+  const newToken = jwt.sign(payload, process.env.SECRET, { expiresIn: "12h" });
+
+  await signInUser(user._id, { token: newToken });
+
+  res.status(200).json({ newToken, user: { mail } });
+};
+
+module.exports = refreshUserToken;

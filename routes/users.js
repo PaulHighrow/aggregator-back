@@ -1,16 +1,17 @@
 const express = require("express");
 
-const authUser = require("../middlewares/streams/authUser");
-const addUser = require("../controllers/addUser");
-const getUser = require("../controllers/getUser");
-const getAllUsers = require("../controllers/getAllUsers");
-const loginUser = require("../controllers/loginUser");
-const refreshUserToken = require("../controllers/refreshUserToken");
-const removeUser = require("../controllers/removeUser");
-const banUser = require("../controllers/banUser");
-
 const { validateUser } = require("../schema/usersSchema");
+
+const authUser = require("../middlewares/streams/authUser");
 const checkIsAdmin = require("../middlewares/streams/checkIsAdmin");
+
+const addUser = require("../controllers/users/addUser");
+const getUser = require("../controllers/users/getUser");
+const getAllUsers = require("../controllers/users/getAllUsers");
+const loginUser = require("../controllers/users/loginUser");
+const refreshUserToken = require("../controllers/users/refreshUserToken");
+const removeUser = require("../controllers/users/removeUser");
+const banUser = require("../controllers/users/banUser");
 
 const router = express.Router();
 

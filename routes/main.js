@@ -1,5 +1,5 @@
 const express = require("express");
-const wakeUp = require("../controllers/wakeUp");
+const wakeUp = require("../controllers/main/wakeUp");
 
 const router = express.Router();
 

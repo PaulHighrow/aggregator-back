@@ -1,11 +1,13 @@
 const express = require("express");
 
-const auth = require("../middlewares/streams/auth");
 const { validateKahoots } = require("../schema/kahootsSchema");
-const updateKahoots = require("../controllers/updateKahoots");
-const addKahoots = require("../controllers/addKahoots");
-const getOneKahoot = require("../controllers/getOneKahoot");
-const getKahoots = require("../controllers/getKahoots");
+
+const auth = require("../middlewares/streams/auth");
+
+const getKahoots = require("../controllers/kahoots/getKahoots");
+const getOneKahoot = require("../controllers/kahoots/getOneKahoot");
+const addKahoots = require("../controllers/kahoots/addKahoots");
+const updateKahoots = require("../controllers/kahoots/updateKahoots");
 
 const router = express.Router();
 

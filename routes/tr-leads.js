@@ -5,7 +5,7 @@ const postTranslationLead = require("../middlewares/crm/postTranslationLead");
 
 const { validateTranslationLead } = require("../schema/translationLeadSchema");
 
-const getLeads = require("../controllers/getLeads");
+const getLeads = require("../controllers/leads/getLeads");
 
 const router = express.Router();
 
