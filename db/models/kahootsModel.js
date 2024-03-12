@@ -38,6 +38,15 @@ const kahoots = new Schema(
         b1_5: String,
       },
     },
+    b2: {
+      links: {
+        b2_1: String,
+        b2_2: String,
+        b2_3: String,
+        b2_4: String,
+        b2_5: String,
+      },
+    },
     deutsch: {
       links: {
         deutsch_1: String,
@@ -96,6 +105,20 @@ const kahoots = new Schema(
         b1kids_8: String,
         b1kids_9: String,
         b1kids_10: String,
+      },
+    },
+    b2kids: {
+      links: {
+        b2kids_1: String,
+        b2kids_2: String,
+        b2kids_3: String,
+        b2kids_4: String,
+        b2kids_5: String,
+        b2kids_6: String,
+        b2kids_7: String,
+        b2kids_8: String,
+        b2kids_9: String,
+        b2kids_10: String,
       },
     },
     trials: {

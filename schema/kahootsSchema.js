@@ -41,6 +41,16 @@ const kahootsSchema = Joi.object({
     }),
     replace: Joi.bool().required(),
   }),
+  b2: Joi.object({
+    links: Joi.object({
+      b2_1: Joi.string().empty(""),
+      b2_2: Joi.string().empty(""),
+      b2_3: Joi.string().empty(""),
+      b2_4: Joi.string().empty(""),
+      b2_5: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
   deutsch: Joi.object({
     links: Joi.object({
       deutsch_1: Joi.string().empty(""),
@@ -103,6 +113,21 @@ const kahootsSchema = Joi.object({
       b1kids_8: Joi.string().empty(""),
       b1kids_9: Joi.string().empty(""),
       b1kids_10: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
+  b2kids: Joi.object({
+    links: Joi.object({
+      b2kids_1: Joi.string().empty(""),
+      b2kids_2: Joi.string().empty(""),
+      b2kids_3: Joi.string().empty(""),
+      b2kids_4: Joi.string().empty(""),
+      b2kids_5: Joi.string().empty(""),
+      b2kids_6: Joi.string().empty(""),
+      b2kids_7: Joi.string().empty(""),
+      b2kids_8: Joi.string().empty(""),
+      b2kids_9: Joi.string().empty(""),
+      b2kids_10: Joi.string().empty(""),
     }),
     replace: Joi.bool().required(),
   }),
