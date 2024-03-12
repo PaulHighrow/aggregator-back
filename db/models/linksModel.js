@@ -14,6 +14,9 @@ const links = new Schema(
     b1: {
       type: String,
     },
+    b2: {
+      type: String,
+    },
     deutsch: {
       type: String,
     },
@@ -23,6 +26,7 @@ const links = new Schema(
     a1kids: { type: String },
     a2kids: { type: String },
     b1kids: { type: String },
+    b2kids: { type: String },
     trials: { type: String },
     trials_de: { type: String },
     trials_pl: { type: String },
