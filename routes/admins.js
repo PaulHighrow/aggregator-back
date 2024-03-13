@@ -9,8 +9,10 @@ const authUserAdmin = require("../middlewares/streams/authUserAdmin");
 const addAdmin = require("../controllers/admins/addAdmin");
 const getLinkAdmin = require("../controllers/admins/getLinkAdmin");
 const loginAdmin = require("../controllers/admins/loginAdmin");
+const refreshAdminToken = require("../controllers/admins/refreshAdminToken");
 const getKahootAdmin = require("../controllers/admins/getKahootAdmin");
 const loginKahootAdmin = require("../controllers/admins/loginKahootAdmin");
+const refreshKahootAdminToken = require("../controllers/admins/refreshKahootAdminToken");
 const getUserAdmin = require("../controllers/admins/getUserAdmin");
 const loginUserAdmin = require("../controllers/admins/loginUserAdmin");
 const refreshUserAdminToken = require("../controllers/admins/refreshUserAdminToken");
@@ -30,6 +32,10 @@ router.post("/login", validateAdminUser, loginAdmin);
 router.post("/login/kahoot", validateAdminUser, loginKahootAdmin);
 
 router.post("/login/users", validateAdminUser, loginUserAdmin);
+
+router.post("/refresh", refreshAdminToken);
+
+router.post("/refresh/kahoot", refreshKahootAdminToken);
 
 router.post("/refresh/users", refreshUserAdminToken);
 
