@@ -20,7 +20,13 @@ const links = new Schema(
     deutsch: {
       type: String,
     },
+    deutscha2: {
+      type: String,
+    },
     polski: {
+      type: String,
+    },
+    polskia2: {
       type: String,
     },
     a1kids: { type: String },

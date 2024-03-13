@@ -61,6 +61,16 @@ const kahootsSchema = Joi.object({
     }),
     replace: Joi.bool().required(),
   }),
+  deutscha2: Joi.object({
+    links: Joi.object({
+      deutscha2_1: Joi.string().empty(""),
+      deutscha2_2: Joi.string().empty(""),
+      deutscha2_3: Joi.string().empty(""),
+      deutscha2_4: Joi.string().empty(""),
+      deutscha2_5: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
   polski: Joi.object({
     links: Joi.object({
       polski_1: Joi.string().empty(""),
@@ -68,6 +78,16 @@ const kahootsSchema = Joi.object({
       polski_3: Joi.string().empty(""),
       polski_4: Joi.string().empty(""),
       polski_5: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
+  polskia2: Joi.object({
+    links: Joi.object({
+      polskia2_1: Joi.string().empty(""),
+      polskia2_2: Joi.string().empty(""),
+      polskia2_3: Joi.string().empty(""),
+      polskia2_4: Joi.string().empty(""),
+      polskia2_5: Joi.string().empty(""),
     }),
     replace: Joi.bool().required(),
   }),
