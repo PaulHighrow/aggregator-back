@@ -13,6 +13,7 @@ const users = new Schema(
       type: String,
       required: [true, "No password"],
     },
+    visited: [String],
     points: {
       type: String,
     },

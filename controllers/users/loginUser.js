@@ -16,10 +16,20 @@ const loginUser = async (req, res, next) => {
 
   const payload = { id: user._id };
   const token = jwt.sign(payload, process.env.SECRET, { expiresIn: "12h" });
+  const visitDate = `${new Date().toLocaleDateString("uk-UA")}`;
 
-  await signInUser(user._id, { token });
+  user.visited.includes(visitDate)
+    ? user.visited
+    : user.visited.length === 31
+    ? user.visited.shift() && user.visited.push(visitDate)
+    : user.visited.push(visitDate);
 
-  res.status(200).json({ token, user: { mail } });
+  const visited = user.visited;
+  console.log(visited);
+
+  await signInUser(user._id, { token, visited });
+
+  res.status(200).json({ token, user: { mail, visited } });
 };
 
 module.exports = loginUser;
