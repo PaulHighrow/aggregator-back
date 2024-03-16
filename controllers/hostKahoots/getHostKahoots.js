@@ -1,7 +1,7 @@
-const { getAllKahoots } = require("../../services/kahootsServices");
+const { getAllHostKahoots } = require("../../services/hostKahootsServices");
 
 const getHostKahoots = async (_, res) => {
-  return res.json(await getAllKahoots());
+  return res.json(await getAllHostKahoots());
 };
 
 module.exports = getHostKahoots;
