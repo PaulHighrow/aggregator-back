@@ -6,11 +6,13 @@ const loginUser = async (req, res, next) => {
   const user = await findUser({ mail });
   console.log(user);
   if (!user) {
+    console.log("!no such user");
     res.status(401).json("Login or password is wrong");
   }
 
   const validatedPassword = password === user.password;
   if (!validatedPassword) {
+    console.log("!passwords don't match");
     res.status(401).json("Login or password is wrong");
   }
 
@@ -27,7 +29,11 @@ const loginUser = async (req, res, next) => {
   const visited = user.visited;
   console.log(visited);
 
-  await signInUser(user._id, { token, visited });
+  try {
+    await signInUser(user._id, { token, visited });
+  } catch (error) {
+    console.log(error);
+  }
 
   res.status(200).json({ token, user: { mail, visited } });
 };
