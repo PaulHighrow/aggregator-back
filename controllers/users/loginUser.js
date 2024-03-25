@@ -28,6 +28,7 @@ const loginUser = async (req, res, next) => {
     : user.visited.push(visitDate);
 
   const visited = user.visited;
+  const name = user.name;
   console.log(visited);
 
   try {
@@ -36,7 +37,7 @@ const loginUser = async (req, res, next) => {
     console.log(error);
   }
 
-  res.status(200).json({ token, user: { mail, visited } });
+  res.status(200).json({ token, user: { mail, name, visited } });
 };
 
 module.exports = loginUser;
