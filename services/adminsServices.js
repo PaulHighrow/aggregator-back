@@ -7,6 +7,9 @@ const findKahootAdmin = async () =>
 
 const findUserAdmin = async () => await Admins.findOne({ login: "UserAdmin" });
 
+const findCollectionsAdmin = async () =>
+  await Admins.findOne({ login: "CollectionsAdmin" });
+
 const newAdmin = async (body) => await Admins(body).save();
 
 const signInAdmin = async (id, body) =>
@@ -18,12 +21,17 @@ const signInKahootAdmin = async (id, body) =>
 const signInUserAdmin = async (id, body) =>
   await Admins.findByIdAndUpdate(id, body, { new: true });
 
+const signInCollectionsAdmin = async (id, body) =>
+  await Admins.findByIdAndUpdate(id, body, { new: true });
+
 module.exports = {
   findAdmin,
   findKahootAdmin,
   findUserAdmin,
+  findCollectionsAdmin,
   newAdmin,
   signInAdmin,
   signInKahootAdmin,
   signInUserAdmin,
+  signInCollectionsAdmin,
 };
