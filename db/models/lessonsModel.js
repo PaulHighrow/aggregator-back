@@ -2,6 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const lessons = new Schema(
   {
+    lang: {
+      type: String,
+      required: [true, "No language"],
+    },
     level: {
       type: String,
       required: [true, "No level"],

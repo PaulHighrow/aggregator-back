@@ -1,6 +1,7 @@
 const Joi = require("joi");
 
 const lessonsSchema = Joi.object({
+  lang: Joi.string().required(),
   level: Joi.string().required(),
   lesson: Joi.string().required(),
   topic: Joi.string().required(),
