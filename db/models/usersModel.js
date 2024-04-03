@@ -13,6 +13,8 @@ const users = new Schema(
       type: String,
       required: [true, "No password"],
     },
+    lang: { type: String },
+    course: { type: String },
     visited: [String],
     points: {
       type: String,

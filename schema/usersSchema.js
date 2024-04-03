@@ -4,6 +4,8 @@ const userSchema = Joi.object({
   name: Joi.string(),
   mail: Joi.string().required(),
   password: Joi.string().required(),
+  lang: Joi.string(),
+  course: Joi.string(),
   visited: Joi.array().items(Joi.string()),
   points: Joi.string().empty(""),
   token: Joi.string(),
