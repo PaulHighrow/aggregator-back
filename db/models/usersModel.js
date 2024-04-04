@@ -13,10 +13,14 @@ const users = new Schema(
       type: String,
       required: [true, "No password"],
     },
+    age: { type: String },
     lang: { type: String },
     course: { type: String },
     visited: [String],
     points: {
+      type: String,
+    },
+    knowledge: {
       type: String,
     },
     token: {
