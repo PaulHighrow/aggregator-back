@@ -18,6 +18,9 @@ const refreshUserToken = async (req, res, next) => {
   const payload = { id: user._id };
   const newToken = jwt.sign(payload, process.env.SECRET, { expiresIn: "12h" });
   const name = user.name;
+  const visited = user.visited;
+  const course = user.course;
+  const lang = user.lang;
 
   try {
     await signInUser(user._id, { token: newToken });
@@ -25,7 +28,9 @@ const refreshUserToken = async (req, res, next) => {
     console.log(error);
   }
 
-  res.status(200).json({ newToken, user: { mail, name } });
+  res
+    .status(200)
+    .json({ newToken, user: { mail, name, visited, lang, course } });
 };
 
 module.exports = refreshUserToken;
