@@ -29,6 +29,9 @@ const loginUser = async (req, res, next) => {
 
   const visited = user.visited;
   const name = user.name;
+  const course = user.course;
+  const lang = user.lang;
+  const points = user.points;
   console.log(visited);
 
   try {
@@ -37,7 +40,7 @@ const loginUser = async (req, res, next) => {
     console.log(error);
   }
 
-  res.status(200).json({ token, user: { mail, name, visited } });
+  res.status(200).json({ token, user: { mail, name, visited, lang, course, points } });
 };
 
 module.exports = loginUser;

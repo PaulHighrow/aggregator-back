@@ -10,6 +10,7 @@ const lessonsRouter = require("./routes/lessons");
 const kahootsRouter = require("./routes/kahoots");
 const hostKahootsRouter = require("./routes/hostKahoots");
 const collectionsRouter = require("./routes/collections");
+const ratingsRouter = require("./routes/ratings");
 const translationLeadsRouter = require("./routes/tr-leads");
 const tokensRouter = require("./routes/tokens");
 const usersRouter = require("./routes/users");
@@ -20,7 +21,7 @@ const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
 app.use(logger(formatsLogger));
 app.use(cors());
-app.use(express.json());
+app.use(express.json({limit: '2mb'}));
 
 app.use("/", router);
 app.use("/leads", leadsRouter);
@@ -30,6 +31,7 @@ app.use("/lessons", lessonsRouter);
 app.use("/kahoots", kahootsRouter);
 app.use("/collections", collectionsRouter);
 app.use("/host-kahoots", hostKahootsRouter);
+app.use("/ratings", ratingsRouter);
 app.use("/tr-leads", translationLeadsRouter);
 app.use("/tokens", tokensRouter);
 app.use("/users", usersRouter);
