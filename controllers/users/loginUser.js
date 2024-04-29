@@ -23,7 +23,7 @@ const loginUser = async (req, res, next) => {
 
   user.visited.includes(visitDate)
     ? user.visited
-    : user.visited.length === 31
+    : user.visited.length === 120
     ? user.visited.shift() && user.visited.push(visitDate)
     : user.visited.push(visitDate);
 
@@ -32,7 +32,6 @@ const loginUser = async (req, res, next) => {
   const course = user.course;
   const lang = user.lang;
   const points = user.points;
-  console.log(visited);
 
   try {
     await signInUser(user._id, { token, visited });
