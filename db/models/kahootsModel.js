@@ -139,6 +139,20 @@ const kahoots = new Schema(
         b2kids_10: String,
       },
     },
+    b1kidsbeginner: {
+      links: {
+        b1kidsbeginner_1: String,
+        b1kidsbeginner_2: String,
+        b1kidsbeginner_3: String,
+        b1kidsbeginner_4: String,
+        b1kidsbeginner_5: String,
+        b1kidsbeginner_6: String,
+        b1kidsbeginner_7: String,
+        b1kidsbeginner_8: String,
+        b1kidsbeginner_9: String,
+        b1kidsbeginner_10: String,
+      },
+    },
     trials: {
       links: {
         trials_1: String,

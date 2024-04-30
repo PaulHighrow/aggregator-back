@@ -33,6 +33,7 @@ const collections = new Schema(
     a2kids: { type: String },
     b1kids: { type: String },
     b2kids: { type: String },
+    b1kidsbeginner: { type: String },
     trials: { type: String },
     trials_de: { type: String },
     trials_pl: { type: String },
