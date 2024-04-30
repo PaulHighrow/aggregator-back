@@ -12,6 +12,7 @@ const loginUser = require("../controllers/users/loginUser");
 const refreshUserToken = require("../controllers/users/refreshUserToken");
 const removeUser = require("../controllers/users/removeUser");
 const banUser = require("../controllers/users/banUser");
+const editUser = require("../controllers/users/editUser");
 
 const router = express.Router();
 
@@ -28,5 +29,7 @@ router.post("/login", validateUser, loginUser);
 router.post("/refresh", refreshUserToken);
 
 router.patch("/:id", banUser);
+
+router.put("/:id", validateUser, editUser);
 
 module.exports = router;
