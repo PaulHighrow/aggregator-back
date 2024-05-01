@@ -23,6 +23,10 @@ const users = new Schema(
     knowledge: {
       type: String,
     },
+    manager: {
+      type: String,
+      required: [true, "No manager"],
+    },
     token: {
       type: String,
     },
