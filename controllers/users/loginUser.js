@@ -23,7 +23,7 @@ const loginUser = async (req, res, next) => {
 
   user.visited.includes(visitDate)
     ? user.visited
-    : user.visited.length === 120
+    : user.visited.length === 365
     ? user.visited.shift() && user.visited.push(visitDate)
     : user.visited.push(visitDate);
 
@@ -39,7 +39,9 @@ const loginUser = async (req, res, next) => {
     console.log(error);
   }
 
-  res.status(200).json({ token, user: { mail, name, visited, lang, course, points } });
+  res
+    .status(200)
+    .json({ token, user: { mail, name, visited, lang, course, points } });
 };
 
 module.exports = loginUser;
