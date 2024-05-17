@@ -17,10 +17,16 @@ const links = new Schema(
     b2: {
       type: String,
     },
+    deutscha0: {
+      type: String,
+    },
     deutsch: {
       type: String,
     },
     deutscha2: {
+      type: String,
+    },
+    polskia0: {
       type: String,
     },
     polski: {
