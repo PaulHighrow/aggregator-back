@@ -17,8 +17,16 @@ const refreshUserToken = async (req, res, next) => {
 
   const payload = { id: user._id };
   const newToken = jwt.sign(payload, process.env.SECRET, { expiresIn: "12h" });
-  const name = user.name;
+  const visitDate = `${new Date().toLocaleDateString("uk-UA")}`;
+
+  user.visited.includes(visitDate)
+    ? user.visited
+    : user.visited.length === 365
+    ? user.visited.shift() && user.visited.push(visitDate)
+    : user.visited.push(visitDate);
+
   const visited = user.visited;
+  const name = user.name;
   const course = user.course;
   const lang = user.lang;
   const points = user.points;
