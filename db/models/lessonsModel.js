@@ -2,6 +2,14 @@ const { Schema, model } = require("mongoose");
 
 const lessons = new Schema(
   {
+    marathonId: {
+      type: String,
+      required: [true, "No marathonId"],
+    },
+    lessonId: {
+      type: String,
+      required: [true, "No lessonId"],
+    },
     lang: {
       type: String,
       required: [true, "No language"],

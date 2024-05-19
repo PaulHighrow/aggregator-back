@@ -1,6 +1,8 @@
 const Joi = require("joi");
 
 const lessonsSchema = Joi.object({
+  marathonId: Joi.string().required(),
+  lessonId: Joi.string().required(),
   lang: Joi.string().required(),
   level: Joi.string().required(),
   lesson: Joi.string().required(),
