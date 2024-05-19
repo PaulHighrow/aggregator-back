@@ -9,8 +9,8 @@ const lessonsSchema = Joi.object({
   topic: Joi.string().required(),
   keysEn: Joi.string().required(),
   keysUa: Joi.string().required(),
-  pdf: Joi.array().items(Joi.string()),
-  video: Joi.array().items(Joi.string()),
+  pdf: Joi.array().items(Joi.string().empty("")),
+  video: Joi.array().items(Joi.string().empty("")),
 });
 
 const validateLesson = ({ body }, res, next) => {
