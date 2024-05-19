@@ -12,6 +12,7 @@ const linksSchema = Joi.object({
   polskia0: Joi.string().empty(""),
   polski: Joi.string().empty(""),
   polskia2: Joi.string().empty(""),
+  a0kids: Joi.string().empty(""),
   a1kids: Joi.string().empty(""),
   a2kids: Joi.string().empty(""),
   b1kids: Joi.string().empty(""),

@@ -111,6 +111,21 @@ const hostKahootsSchema = Joi.object({
     }),
     replace: Joi.bool().required(),
   }),
+  a0kids: Joi.object({
+    links: Joi.object({
+      a0kids_1: Joi.string().empty(""),
+      a0kids_2: Joi.string().empty(""),
+      a0kids_3: Joi.string().empty(""),
+      a0kids_4: Joi.string().empty(""),
+      a0kids_5: Joi.string().empty(""),
+      a0kids_6: Joi.string().empty(""),
+      a0kids_7: Joi.string().empty(""),
+      a0kids_8: Joi.string().empty(""),
+      a0kids_9: Joi.string().empty(""),
+      a0kids_10: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
   a1kids: Joi.object({
     links: Joi.object({
       a1kids_1: Joi.string().empty(""),

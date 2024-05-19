@@ -35,6 +35,7 @@ const collections = new Schema(
     polskia2: {
       type: String,
     },
+    a0kids: { type: String },
     a1kids: { type: String },
     a2kids: { type: String },
     b1kids: { type: String },
