@@ -4,6 +4,7 @@ const userSchema = Joi.object({
   name: Joi.string(),
   mail: Joi.string().required(),
   password: Joi.string().required(),
+  pupilId: Joi.string().required(),
   age: Joi.string().empty(""),
   lang: Joi.string(),
   course: Joi.string(),

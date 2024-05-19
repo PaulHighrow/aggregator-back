@@ -13,6 +13,7 @@ const users = new Schema(
       type: String,
       required: [true, "No password"],
     },
+    pupilId: { type: String, required: [true, "No pupilId"] },
     age: { type: String },
     lang: { type: String },
     course: { type: String },
