@@ -3,6 +3,7 @@ const Joi = require("joi");
 const lessonsSchema = Joi.object({
   marathonId: Joi.string().required(),
   lessonId: Joi.string().required(),
+  marathonName: Joi.string().required(),
   lang: Joi.string().required(),
   level: Joi.string().required(),
   lesson: Joi.string().required(),
@@ -11,6 +12,7 @@ const lessonsSchema = Joi.object({
   keysUa: Joi.string().required(),
   pdf: Joi.array().items(Joi.string().empty("")) || Joi.array().length(0),
   video: Joi.array().items(Joi.string().empty("")) || Joi.array().length(0),
+  faq: Joi.array().items(Joi.string().empty("")) || Joi.array().length(0),
 });
 
 const validateLesson = ({ body }, res, next) => {

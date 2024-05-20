@@ -10,6 +10,10 @@ const lessons = new Schema(
       type: String,
       required: [true, "No lessonId"],
     },
+    marathonName: {
+      type: String,
+      required: [true, "No marathonName"],
+    },
     lang: {
       type: String,
       required: [true, "No language"],
@@ -33,6 +37,7 @@ const lessons = new Schema(
     },
     pdf: [String],
     video: [String],
+    faq: [String],
   },
   {
     versionKey: false,
