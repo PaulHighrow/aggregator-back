@@ -18,7 +18,7 @@ const postLead = async (req, res, _) => {
           field_name: "utm_content",
           values: [
             {
-              value: req.body.utm_content || '',
+              value: req.body.utm_content || "",
             },
           ],
         },
@@ -27,7 +27,7 @@ const postLead = async (req, res, _) => {
           field_name: "utm_medium",
           values: [
             {
-              value: req.body.utm_medium || '',
+              value: req.body.utm_medium || "",
             },
           ],
         },
@@ -36,7 +36,7 @@ const postLead = async (req, res, _) => {
           field_name: "utm_campaign",
           values: [
             {
-              value: req.body.utm_campaign || '',
+              value: req.body.utm_campaign || "",
             },
           ],
         },
@@ -45,7 +45,7 @@ const postLead = async (req, res, _) => {
           field_name: "utm_source",
           values: [
             {
-              value: req.body.utm_source || '',
+              value: req.body.utm_source || "",
             },
           ],
         },
@@ -54,7 +54,7 @@ const postLead = async (req, res, _) => {
           field_name: "utm_term",
           values: [
             {
-              value: req.body.utm_term || '',
+              value: req.body.utm_term || "",
             },
           ],
         },
@@ -63,7 +63,7 @@ const postLead = async (req, res, _) => {
           field_name: "utm_referrer",
           values: [
             {
-              value: req.body.utm_referrer || '',
+              value: req.body.utm_referrer || "",
             },
           ],
         },
@@ -72,7 +72,7 @@ const postLead = async (req, res, _) => {
           field_name: "referrer",
           values: [
             {
-              value: req.body.referrer || '',
+              value: req.body.referrer || "",
             },
           ],
         },
@@ -81,7 +81,7 @@ const postLead = async (req, res, _) => {
           field_name: "gclientid",
           values: [
             {
-              value: req.body.gclientid || '',
+              value: req.body.gclientid || "",
             },
           ],
         },
@@ -90,7 +90,7 @@ const postLead = async (req, res, _) => {
           field_name: "gclid",
           values: [
             {
-              value: req.body.gclid || '',
+              value: req.body.gclid || "",
             },
           ],
         },
@@ -99,13 +99,13 @@ const postLead = async (req, res, _) => {
           field_name: "fbclid",
           values: [
             {
-              value: req.body.fbclid || '',
+              value: req.body.fbclid || "",
             },
           ],
         },
       ],
       _embedded: {
-        tags: [{ name: "Лід з сайту" }],
+        tags: [{ name: "Лід з сайту" }, { name: req.body.tag }],
         contacts: [
           {
             name: req.body.name,
@@ -130,6 +130,7 @@ const postLead = async (req, res, _) => {
   const lead = {
     name: req.body.name,
     phone: req.body.phone,
+    tag: req.body.tag,
     utm_content: req.body.utm_content,
     utm_medium: req.body.utm_medium,
     utm_campaign: req.body.utm_campaign,

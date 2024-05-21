@@ -10,6 +10,7 @@ const leads = new Schema(
       type: String,
       required: [true, "Set phone number"],
     },
+    tag: { type: String },
     lang: { type: String },
     utm_content: { type: String },
     utm_medium: { type: String },
