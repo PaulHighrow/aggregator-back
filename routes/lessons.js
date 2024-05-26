@@ -15,7 +15,7 @@ router.post("/", validateLesson, addLesson);
 
 router.put("/:id", validateLesson, editLesson);
 
-router.patch("/:id", validateLesson, editLesson);
+router.patch("/:id", editLesson);
 
 router.delete("/:id", removeLesson);
 
