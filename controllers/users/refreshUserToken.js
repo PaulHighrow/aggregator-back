@@ -32,7 +32,7 @@ const refreshUserToken = async (req, res, next) => {
   const points = user.points;
 
   try {
-    await signInUser(user._id, { token: newToken });
+    await signInUser(user._id, { visited, token: newToken });
   } catch (error) {
     console.log(error);
   }
