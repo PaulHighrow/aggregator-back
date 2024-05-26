@@ -37,7 +37,13 @@ const lessons = new Schema(
     },
     pdf: [String],
     video: [String],
-    faq: [String],
+    faq: [
+      {
+        exercise: { type: String },
+        question: { type: String },
+        answer: { type: String },
+      },
+    ],
   },
   {
     versionKey: false,

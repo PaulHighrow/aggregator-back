@@ -12,7 +12,13 @@ const lessonsSchema = Joi.object({
   keysUa: Joi.string().required(),
   pdf: Joi.array().items(Joi.string().empty("")) || Joi.array().length(0),
   video: Joi.array().items(Joi.string().empty("")) || Joi.array().length(0),
-  faq: Joi.array().items(Joi.string().empty("")) || Joi.array().length(0),
+  faq: Joi.array.items(
+    Joi.object({
+      exercise: Joi.string(),
+      question: Joi.string(),
+      answer: Joi.string(),
+    })
+  ),
 });
 
 const validateLesson = ({ body }, res, next) => {
