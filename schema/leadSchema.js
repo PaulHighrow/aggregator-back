@@ -5,6 +5,7 @@ const leadSchema = Joi.object({
   phone: Joi.string().min(10).max(20).required(),
   tag: Joi.string().empty(""),
   lang: Joi.string().empty(""),
+  crmId: Joi.number(),
   utm_content: Joi.string().empty(""),
   utm_medium: Joi.string().empty(""),
   utm_campaign: Joi.string().empty(""),

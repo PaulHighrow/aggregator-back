@@ -12,6 +12,7 @@ const leads = new Schema(
     },
     tag: { type: String },
     lang: { type: String },
+    crmId: { type: Number },
     utm_content: { type: String },
     utm_medium: { type: String },
     utm_campaign: { type: String },

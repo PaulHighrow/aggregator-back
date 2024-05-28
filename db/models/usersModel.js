@@ -13,10 +13,12 @@ const users = new Schema(
       type: String,
       required: [true, "No password"],
     },
-    pupilId: { type: String},
+    crmId: { type: Number },
+    pupilId: { type: String },
     age: { type: String },
     lang: { type: String },
     course: { type: String },
+    package: { type: String },
     visited: [String],
     points: {
       type: String,
