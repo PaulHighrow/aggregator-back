@@ -2,6 +2,9 @@ const { Schema, model } = require("mongoose");
 
 const ratings = new Schema(
   {
+    period: {
+      type: String,
+    },
     rating: {
       type: Object,
       required: [true, "No rating"],

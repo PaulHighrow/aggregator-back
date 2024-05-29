@@ -1,7 +1,8 @@
 const Joi = require("joi");
 
 const ratingsSchema = Joi.object({
-  rating: Joi.string().required()
+  period: Joi.string().required(),
+  rating: Joi.string().required(),
 });
 
 const validateRatings = ({ body }, res, next) => {
