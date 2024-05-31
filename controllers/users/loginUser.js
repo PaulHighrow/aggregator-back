@@ -32,7 +32,8 @@ const loginUser = async (req, res, next) => {
   const course = user.course;
   const lang = user.lang;
   const points = user.points;
-  const pupilId = user.pupilId
+  const pupilId = user.pupilId;
+  const knowledge = user.knowledge;
 
   try {
     await signInUser(user._id, { token, visited });
@@ -42,7 +43,7 @@ const loginUser = async (req, res, next) => {
 
   res
     .status(200)
-    .json({ token, user: { mail, name, visited, lang, course, points, pupilId } });
+    .json({ token, user: { mail, name, visited, lang, course, points, pupilId, knowledge } });
 };
 
 module.exports = loginUser;

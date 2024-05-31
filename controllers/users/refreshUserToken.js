@@ -30,7 +30,8 @@ const refreshUserToken = async (req, res, next) => {
   const course = user.course;
   const lang = user.lang;
   const points = user.points;
-  const pupilId = user.pupilId
+  const pupilId = user.pupilId;
+  const knowledge = user.knowledge;
 
   try {
     await signInUser(user._id, { visited, token: newToken });
@@ -40,7 +41,7 @@ const refreshUserToken = async (req, res, next) => {
 
   res
     .status(200)
-    .json({ newToken, user: { mail, name, visited, lang, course, points, pupilId } });
+    .json({ newToken, user: { mail, name, visited, lang, course, points, pupilId, knowledge } });
 };
 
 module.exports = refreshUserToken;
