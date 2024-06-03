@@ -17,6 +17,12 @@ const links = new Schema(
     b2: {
       type: String,
     },
+    a1free: {
+      type: String,
+    },
+    a2free: {
+      type: String,
+    },
     deutscha0: {
       type: String,
     },
@@ -24,6 +30,12 @@ const links = new Schema(
       type: String,
     },
     deutscha2: {
+      type: String,
+    },
+    deutschfree: {
+      type: String,
+    },
+    deutscha2free: {
       type: String,
     },
     polskia0: {
@@ -35,12 +47,16 @@ const links = new Schema(
     polskia2: {
       type: String,
     },
+    polskifree: {
+      type: String,
+    },
     a0kids: { type: String },
     a1kids: { type: String },
     a2kids: { type: String },
     b1kids: { type: String },
     b2kids: { type: String },
     b1kidsbeginner: { type: String },
+    a1kidsfree: { type: String },
     trials: { type: String },
     trials_de: { type: String },
     trials_pl: { type: String },

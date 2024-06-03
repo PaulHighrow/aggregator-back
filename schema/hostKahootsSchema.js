@@ -51,6 +51,26 @@ const hostKahootsSchema = Joi.object({
     }),
     replace: Joi.bool().required(),
   }),
+  a1free: Joi.object({
+    links: Joi.object({
+      a1free_1: Joi.string().empty(""),
+      a1free_2: Joi.string().empty(""),
+      a1free_3: Joi.string().empty(""),
+      a1free_4: Joi.string().empty(""),
+      a1free_5: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
+  a2free: Joi.object({
+    links: Joi.object({
+      a2free_1: Joi.string().empty(""),
+      a2free_2: Joi.string().empty(""),
+      a2free_3: Joi.string().empty(""),
+      a2free_4: Joi.string().empty(""),
+      a2free_5: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
   deutscha0: Joi.object({
     links: Joi.object({
       deutscha0_1: Joi.string().empty(""),
@@ -81,6 +101,26 @@ const hostKahootsSchema = Joi.object({
     }),
     replace: Joi.bool().required(),
   }),
+  deutschfree: Joi.object({
+    links: Joi.object({
+      deutschfree_1: Joi.string().empty(""),
+      deutschfree_2: Joi.string().empty(""),
+      deutschfree_3: Joi.string().empty(""),
+      deutschfree_4: Joi.string().empty(""),
+      deutschfree_5: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
+  deutscha2free: Joi.object({
+    links: Joi.object({
+      deutscha2free_1: Joi.string().empty(""),
+      deutscha2free_2: Joi.string().empty(""),
+      deutscha2free_3: Joi.string().empty(""),
+      deutscha2free_4: Joi.string().empty(""),
+      deutscha2free_5: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
   polskia0: Joi.object({
     links: Joi.object({
       polskia0_1: Joi.string().empty(""),
@@ -108,6 +148,16 @@ const hostKahootsSchema = Joi.object({
       polskia2_3: Joi.string().empty(""),
       polskia2_4: Joi.string().empty(""),
       polskia2_5: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
+  polskifree: Joi.object({
+    links: Joi.object({
+      polskifree_1: Joi.string().empty(""),
+      polskifree_2: Joi.string().empty(""),
+      polskifree_3: Joi.string().empty(""),
+      polskifree_4: Joi.string().empty(""),
+      polskifree_5: Joi.string().empty(""),
     }),
     replace: Joi.bool().required(),
   }),
@@ -198,6 +248,21 @@ const hostKahootsSchema = Joi.object({
       b1kidsbeginner_8: Joi.string().empty(""),
       b1kidsbeginner_9: Joi.string().empty(""),
       b1kidsbeginner_10: Joi.string().empty(""),
+    }),
+    replace: Joi.bool().required(),
+  }),
+  a1kidsfree: Joi.object({
+    links: Joi.object({
+      a1kidsfree_1: Joi.string().empty(""),
+      a1kidsfree_2: Joi.string().empty(""),
+      a1kidsfree_3: Joi.string().empty(""),
+      a1kidsfree_4: Joi.string().empty(""),
+      a1kidsfree_5: Joi.string().empty(""),
+      a1kidsfree_6: Joi.string().empty(""),
+      a1kidsfree_7: Joi.string().empty(""),
+      a1kidsfree_8: Joi.string().empty(""),
+      a1kidsfree_9: Joi.string().empty(""),
+      a1kidsfree_10: Joi.string().empty(""),
     }),
     replace: Joi.bool().required(),
   }),
