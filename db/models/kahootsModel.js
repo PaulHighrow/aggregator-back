@@ -101,13 +101,13 @@ const kahoots = new Schema(
         deutschfree_5: String,
       },
     },
-    deutschfreea2: {
+    deutscha2free: {
       links: {
-        deutschfreea2_1: String,
-        deutschfreea2_2: String,
-        deutschfreea2_3: String,
-        deutschfreea2_4: String,
-        deutschfreea2_5: String,
+        deutscha2free_1: String,
+        deutscha2free_2: String,
+        deutscha2free_3: String,
+        deutscha2free_4: String,
+        deutscha2free_5: String,
       },
     },
     polskia0: {
