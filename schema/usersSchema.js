@@ -9,7 +9,7 @@ const userSchema = Joi.object({
   age: Joi.string().empty(""),
   lang: Joi.string(),
   course: Joi.string(),
-  package: Joi.string(),
+  package: Joi.string().empty(""),
   visited: Joi.array().items(Joi.string()),
   points: Joi.string().empty(""),
   knowledge: Joi.string().empty(""),
