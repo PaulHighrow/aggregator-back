@@ -27,7 +27,9 @@ const loginUser = async (req, res, next) => {
     ? user.visited.shift() && user.visited.push(visitDate)
     : user.visited.push(visitDate);
 
-  const visitTimeDate = `${new Date().toLocaleString("uk-UA")}`;
+  const visitTimeDate = `${new Date().toLocaleString("uk-UA", {
+    timeZone: "+03:00",
+  })}`;
 
   user.visitedTime.includes(visitTimeDate)
     ? user.visitedTime
@@ -50,22 +52,20 @@ const loginUser = async (req, res, next) => {
     console.log(error);
   }
 
-  res
-    .status(200)
-    .json({
-      token,
-      user: {
-        mail,
-        name,
-        visited,
-        visitedTime,
-        lang,
-        course,
-        points,
-        pupilId,
-        knowledge,
-      },
-    });
+  res.status(200).json({
+    token,
+    user: {
+      mail,
+      name,
+      visited,
+      visitedTime,
+      lang,
+      course,
+      points,
+      pupilId,
+      knowledge,
+    },
+  });
 };
 
 module.exports = loginUser;
