@@ -20,6 +20,7 @@ const users = new Schema(
     course: { type: String },
     package: { type: String },
     visited: [String],
+    visitedTime: [String],
     points: {
       type: String,
     },

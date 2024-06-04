@@ -27,7 +27,16 @@ const loginUser = async (req, res, next) => {
     ? user.visited.shift() && user.visited.push(visitDate)
     : user.visited.push(visitDate);
 
+  const visitTimeDate = `${new Date().toLocaleString("uk-UA")}`;
+
+  user.visitedTime.includes(visitTimeDate)
+    ? user.visitedTime
+    : user.visitedTime.length === 365
+    ? user.visitedTime.shift() && user.visitedTime.push(visitTimeDate)
+    : user.visitedTime.push(visitTimeDate);
+
   const visited = user.visited;
+  const visitedTime = user.visitedTime;
   const name = user.name;
   const course = user.course;
   const lang = user.lang;
@@ -36,14 +45,27 @@ const loginUser = async (req, res, next) => {
   const knowledge = user.knowledge;
 
   try {
-    await signInUser(user._id, { token, visited });
+    await signInUser(user._id, { token, visited, visitedTime });
   } catch (error) {
     console.log(error);
   }
 
   res
     .status(200)
-    .json({ token, user: { mail, name, visited, lang, course, points, pupilId, knowledge } });
+    .json({
+      token,
+      user: {
+        mail,
+        name,
+        visited,
+        visitedTime,
+        lang,
+        course,
+        points,
+        pupilId,
+        knowledge,
+      },
+    });
 };
 
 module.exports = loginUser;

@@ -11,6 +11,7 @@ const userSchema = Joi.object({
   course: Joi.string(),
   package: Joi.string().empty(""),
   visited: Joi.array().items(Joi.string()),
+  visitedTime: Joi.array().items(Joi.string()),
   points: Joi.string().empty(""),
   knowledge: Joi.string().empty(""),
   manager: Joi.string().empty(""),
