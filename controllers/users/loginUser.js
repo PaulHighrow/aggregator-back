@@ -27,9 +27,7 @@ const loginUser = async (req, res, next) => {
     ? user.visited.shift() && user.visited.push(visitDate)
     : user.visited.push(visitDate);
 
-  const visitTimeDate = `${new Date().toLocaleString("uk-UA", {
-    timeZone: "+03:00",
-  })}`;
+  const visitTimeDate = `${new Date().toISOString()}`;
 
   user.visitedTime.includes(visitTimeDate)
     ? user.visitedTime
